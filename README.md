@@ -67,7 +67,7 @@ index.js - The main entry point for the project. The server is started in this f
 package.json - Contains the scripts and dependencies for the project
 ```
 
-API information:
+#### API information:
 All the APIs are mounted on the /api
 The following two APIs are there:
 1. GET api/health-check
@@ -75,7 +75,8 @@ The following two APIs are there:
 	Example: /api/search?q=error OR info
 More information on the APIs are present in the docs/index.html
 
-Some restrictions to pass the text to the query parameter
+#### Some restrictions to pass the text to the query parameter
+
 1. Just pass the text without the : as given in the requirement file
 2. Do not leave space after '(' or before ')' as it will add a space in the $and
 3. The string inside the len() should be a numeric string. len(9) is valid, len(hi) is invalid
@@ -83,8 +84,9 @@ Some restrictions to pass the text to the query parameter
 5. Keywords like %20 and %30 are restricted for searching as they are used for parsing
 6. Keywords like AND/OR are treated as special operators. and/or can be used in search
 
-Test
-1.If you want to try out some texts, you can either do it in the browser using the /api/search?q= api and passing the string as query. 
+#### Test
+
+1.If you want to try out some texts, you can either do it in the browser using the '/api/search?q=error OR info' api and passing the string as query. 
 2. You can do the same thing using a client like POSTMAN
 3. You can also create some test cases in the test/misc.test.js file (//add more test cases here)
 ```
