@@ -86,9 +86,9 @@ More information on the APIs are present in the docs/index.html
 
 #### Test
 
-1.If you want to try out some texts, you can either do it in the browser using the '/api/search?q=error OR info' api and passing the string as query. 
+1. If you want to try out some texts, you can either do it in the browser using the '/api/search?q=error OR info' api and passing the string as query.
 2. You can do the same thing using a client like POSTMAN
-3. You can also create some test cases in the test/misc.test.js file (//add more test cases here)
+3. You can also create some test cases in the test/misc.test.js file (after //add more test cases here) by adding the following lines
 ```
 describe('<test name>', () => {
     it('<what the test does>', (done) => {
