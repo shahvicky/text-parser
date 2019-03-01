@@ -1,7 +1,8 @@
-# The project is completed using Node.js so you might need to install some packages.
+#LogDNA text query to 
+The project is completed using Node.js so you might need to install some packages.
 Please use node version 8.x or 10.x
 
-##Getting started:
+## Getting started:
 
 Unzip the folder.
 ```
@@ -45,10 +46,13 @@ Information on some files in the project:
 
 ```
 config
-	|_ config.js - configuration file to load all the environmental variables from .env. Parameters are also validated here using Object Scheme Validation(joi)
+	|_ config.js - configuration file to load all the environmental variables from .env. 
+                  Parameters are also validated here using Object Scheme Validation(joi)
 	|_ express.js - The main app setup
 	|_ param_validation.js - All the parameters in the APIs are validated here using Object Scheme Validation(joi)
-	|_ winston.js - The project uses winston to log the api or errors in a separate log folder. Currently, everything is logged in a file in json format. A new file is generated per day. If you want to change to logging to console, change the transport from winston.transports.File or winston.transports.DailyRotateFile to winston.transports.console
+	|_ winston.js - The project uses winston to log the api or errors in a separate log folder. 
+                  Currently, everything is logged in a file in json format. A new file is generated per day. 
+                  If you want to change to logging to console, change the transport from winston.transports.File or winston.transports.DailyRotateFile to winston.transports.console
 server
 	|_controllers - folder to keep all the controllers
 	|_routes - folder to keep all the routes
@@ -57,7 +61,7 @@ server
 	|_services - folder to keep services files if any
 	|_helpers - folder to keep helper files
 	|_tests - folder to keep the files for unit testing
-.env - The secret keys and environment variables are present here like the database passwords or the port to run the server
+.env.example - The secret keys and environment variables are present here like the database passwords or the port to run the server
 index.js - The main entry point for the project. The server is started in this file
 package.json - Contains the scripts and dependencies for the project
 ```
@@ -82,7 +86,7 @@ Test
 1.If you want to try out some texts, you can either do it in the browser using the /api/search?q= api and passing the string as query. 
 2. You can do the same thing using a client like POSTMAN
 3. You can also create some test cases in the test/misc.test.js file (//add more test cases here)
-
+```
 describe('<test name>', () => {
     it('<what the test should so>', (done) => {
       request(app)
@@ -98,5 +102,5 @@ describe('<test name>', () => {
         .catch(done);
     });
   });
-
+```
 Run the command `yarn test` to run the test cases.
