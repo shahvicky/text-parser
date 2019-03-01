@@ -1,0 +1,12 @@
+#API and secret keys
+.env
+
+#Dependency directories
+node_modules
+
+#Editor
+.vscode
+
+# Logs
+logs
+*.log
