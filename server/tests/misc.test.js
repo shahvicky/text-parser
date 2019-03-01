@@ -113,6 +113,51 @@ describe('## Misc', () => {
     });
   });
 
+  describe('# GET /api/search?q=healthcheck (successful OR ping)', () => {
+    it('should return formatted json', (done) => {
+      request(app)
+        .get('/api/search')
+        .query({q: 'healthcheck (successful OR ping)'})
+        .expect(httpStatus.OK)
+        .then((res) => {
+          let out = { "$and": ["healthcheck", { "$or": ["successful", "ping"] }] }
+          expect(res.body).to.eql(out);
+          done();
+        })
+        .catch(done);
+    });
+  });
+
+  describe('# GET /api/search?q=healthcheck (!successful OR ping)', () => {
+    it('should return formatted json', (done) => {
+      request(app)
+        .get('/api/search')
+        .query({q: 'healthcheck (!successful OR ping)'})
+        .expect(httpStatus.OK)
+        .then((res) => {
+          let out = { "$and": ["healthcheck", { "$or": [{ "$not": "successful" }, "ping"] }] }
+          expect(res.body).to.eql(out);
+          done();
+        })
+        .catch(done);
+    });
+  });
+
+  describe('# GET /api/search?q=healthcheck (!success  ping (remote OR urban)) <len(10)', () => {
+    it('should return formatted json', (done) => {
+      request(app)
+        .get('/api/search')
+        .query({q: 'healthcheck (!success  ping (remote OR urban)) <len(10)'})
+        .expect(httpStatus.OK)
+        .then((res) => {
+          let out = { "$and": ["healthcheck", { "$and": [{ "$not": "success" }, "", "ping", { "$or": ["remote", "urban"] }] }, { "$lt": { "$len": 10 } }] }
+          expect(res.body).to.eql(out);
+          done();
+        })
+        .catch(done);
+    });
+  });
+  
   //add more test cases here
 
 });
