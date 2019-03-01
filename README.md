@@ -18,15 +18,16 @@ yarn
 ```
 Set environment (vars):
 ```
-cp .env.example .env
+cp .env.example .env	(linux)
+copy .env.example .env	(windows)
 ```
 Change the port in .env file if you want to.
 
-Run the application:
+Start server:
 ```
 yarn start
 ```
-Run the test cases:
+Tests:
 ```
 yarn test
 ```
@@ -88,7 +89,7 @@ Test
 3. You can also create some test cases in the test/misc.test.js file (//add more test cases here)
 ```
 describe('<test name>', () => {
-    it('<what the test should so>', (done) => {
+    it('<what the test does>', (done) => {
       request(app)
         .get('/api/search')
         .query({q: 'write your test string here'})
