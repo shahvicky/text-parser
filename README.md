@@ -1,8 +1,8 @@
-#LogDNA text query to 
+## LogDNA Backend Engineering Challenge (parser)
 The project is completed using Node.js so you might need to install some packages.
 Please use node version 8.x or 10.x
 
-## Getting started:
+### Getting started:
 
 Unzip the folder.
 ```
@@ -38,7 +38,7 @@ npm install -g apidoc
 ```
 Generate docs:
 ```
-yarn apidocs
+yarn apidoc
 ```
 (The docs are created in the root folder. Just open the index.html file inside the docs folder to see the api documentation)
 
