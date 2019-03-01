@@ -1,47 +1,49 @@
-The project is completed using Node.js so you might need to install some packages.
+# The project is completed using Node.js so you might need to install some packages.
 Please use node version 8.x or 10.x
 
-Getting started:
+##Getting started:
 
 Unzip the folder.
-
+```
 cd LogDNA-Backend
-
+```
 Install yarn:
-
+```
 npm install -g yarn
-
+```
 Install dependencies:
-
+```
 yarn
-
+```
 Set environment (vars):
-
+```
 cp .env.example .env
-
+```
 Change the port in .env file if you want to.
 
 Run the application:
-
+```
 yarn start
-
+```
 Run the test cases:
-
+```
 yarn test
-
+```
 To generate api docs, I have used apidoc:
 
 Install apidoc:
-
+```
 npm install -g apidoc
-
+```
 Generate docs:
-
+```
 yarn apidocs
+```
 (The docs are created in the root folder. Just open the index.html file inside the docs folder to see the api documentation)
 
 Information on some files in the project:
 
+```
 config
 	|_ config.js - configuration file to load all the environmental variables from .env. Parameters are also validated here using Object Scheme Validation(joi)
 	|_ express.js - The main app setup
@@ -58,7 +60,7 @@ server
 .env - The secret keys and environment variables are present here like the database passwords or the port to run the server
 index.js - The main entry point for the project. The server is started in this file
 package.json - Contains the scripts and dependencies for the project
-
+```
 
 API information:
 All the APIs are mounted on the /api
