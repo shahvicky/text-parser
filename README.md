@@ -1,4 +1,26 @@
-## LogDNA Backend Engineering Challenge (parser)
+## Text Parser - Parse text to json format for searching data
+Eg: 
+Input=> :healthcheck OR info
+Output=> {"$or": ["healthcheck", "info"]}
+
+Input=> healthcheck (-successful OR ping)
+Output=> {"$and":["healthcheck",{"$or":["-successful","ping"]}]}
+
+Input=> healthcheck (!successful OR ping)
+Output=> {"$and":["healthcheck",{"$or":[{"$not":"successful"},"ping"]}]}
+
+Below are the search rules:
+- terms are implicitly AND'd together unless quoted
+- terms are implicitly an exact match
+- multiple search terms can be nested using ()'s
+- negation can be done using ! in front of search term
+- OR'ing search terms can be done by explicitly using "OR" keyword
+- AND'ing search terms can optionally be done by explicitly using "AND" keyword
+- using '>', '>=', '<', '=<' denotes a non exact match on the term following respective symbol
+- using '=' denotes an exact match on the term following respective symbol
+- len(#) will allow us to match length of JSON data instead of actual value
+- 'true', 'false' will be matched to their boolean values instead of string values
+
 The project is completed using Node.js so you might need to install some packages.
 Please use node version 8.x or 10.x
 
@@ -6,7 +28,7 @@ Please use node version 8.x or 10.x
 
 Unzip the folder.
 ```
-cd LogDNA-Backend
+cd text-parser
 ```
 Install yarn:
 ```
