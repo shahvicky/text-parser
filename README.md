@@ -53,17 +53,6 @@ Tests:
 ```
 yarn test
 ```
-To generate api docs, I have used apidoc:
-
-Install apidoc:
-```
-npm install -g apidoc
-```
-Generate docs:
-```
-yarn apidoc
-```
-(The docs are created in the root folder. Just open the index.html file inside the docs folder to see the api documentation)
 
 Information on some files in the project:
 
